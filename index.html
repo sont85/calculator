@@ -82,9 +82,9 @@
             </div>
           </div>
           <div class="row">
-            <button class="btn btn-default col-xs-4" id="deleteButton">&larr;</button>
-            <button class="btn btn-default col-xs-4" id="squareRootButton">&radic;</button>
-            <button class="btn btn-default col-xs-4" id="clearButton">C</button>
+            <button class="btn btn-default col-xs-4 calc-op" data-op='delete' id="deleteButton">&larr;</button>
+            <button class="btn btn-default col-xs-4 calc-op" data-op='squareRoot' id="squareRootButton">&radic;</button>
+            <button class="btn btn-default col-xs-4 calc-op" data-op='clear' id="clearButton">C</button>
             <button class="btn btn-default col-xs-4 operator" data-op='add'>&#x2b;</button>
           </div>
           <div class="row">
@@ -105,20 +105,19 @@
             <button class="numbers btn btn-default col-xs-4">1</button>
             <button class="numbers btn btn-default col-xs-4">2</button>
             <button class="numbers btn btn-default col-xs-4">3</button>
-            <button class="btn btn-default col-xs-4 operator" data-op="divide">&divide;</button>
+            <button class="btn btn-default col-xs-4 operator" data-op="divide" >&divide;</button>
 
           </div>
           <div class="row">
             <button class="numbers btn btn-default col-xs-4">0</button>
-            <button class="btn btn-default col-xs-4" id="decimalButton">&#x2e;</button>
-            <button class="btn btn-default col-xs-4" id="plusMinusButton">&plusmn;</button>
-            <button class="btn btn-default col-xs-4" id="equalButton">&#x3d;</button>
+            <button class="btn btn-default col-xs-4 calc-op" data-op="decimal" id="decimalButton">&#x2e;</button>
+            <button class="btn btn-default col-xs-4 calc-op" data-op="plusMinus" id="plusMinusButton">&plusmn;</button>
+            <button class="btn btn-default col-xs-4 calc-op" data-op="equal">&#x3d;</button>
           </div>
       </div>
     </div>
     </div> <!--end of container-->
     <audio src="clickSound.mp3" type="audio/mp3" id="clickAudio"></audio>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
