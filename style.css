@@ -1,0 +1,21 @@
+body {
+  padding-top: 80px;
+  background: linear-gradient(to  left, #AFDAE3, #A9c);
+  padding-left: 40px;
+}
+.btn {
+  width: 62px;
+  height: 62px;
+  font-size: 25px;
+}
+#displayDiv {
+  width: 250px;
+  min-height: 80px;
+  background: black;
+  font-size: 45px;
+  color: white;
+  word-wrap: break-word;
+}
+.navbar-default {
+  background : linear-gradient(to left, #AFDAE3,#A9c);
+}
