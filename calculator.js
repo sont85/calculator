@@ -20,7 +20,7 @@ var calc = (function() {
     },
     digit: function(digit) {
       currentNumbers += digit;
-      console.log(currentNumbers);
+      calc.display();
     },
     calculate: function() {
       var secondNumbers = Number(currentNumbers);
@@ -48,16 +48,18 @@ var calc = (function() {
       currentNumbers = Math.sqrt(Number(currentNumbers));
       calc.display(currentNumbers || '0');
     },
+    decimal: function() {
+      currentNumbers += '.';
+      calc.display();
+    },
     delete: function() {
-      console.log(currentNumbers, typeof currentNumbers)
-      currentNumbers.slice(currentNumbers.length - 1, 1)
+      currentNumbers = currentNumbers.slice(0, currentNumbers.length - 1);
       calc.display();
     },
     storeNumbers: function(){
       if (currentNumbers) {
         numbers = Number(currentNumbers);
       }
-      console.log(numbers);
       currentNumbers = '';
     },
     storeOperator: function(mathOperator) {
@@ -66,7 +68,7 @@ var calc = (function() {
       }
     },
     display: function(result) {
-      var displayNumber = result || currentNumbers;
+      var displayNumber = result || Number(currentNumbers);
       $('#display').text(displayNumber);
     },
     reset: function() {
@@ -77,18 +79,20 @@ var calc = (function() {
 })();
 
 $(function() {
+  var clickAudio = document.getElementById('clickAudio');
+  $('.btn').on('click', function() {
+		clickAudio.currentTime = 0;
+    clickAudio.play();
+  });
   $('.operator').on('click', function() {
     var operator = $(this).data('op');
     calc.storeNumbers();
     calc.storeOperator(operator);
   });
-
   $('.numbers').on('click', function(){
     var number = $(this).text();
     calc.digit(number);
-    calc.display();
   });
-
   $('.calc-op').on('click', function(){
     var op = $(this).data('op');
     calc[op]();
